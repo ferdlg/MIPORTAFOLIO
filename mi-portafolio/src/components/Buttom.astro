@@ -1,11 +1,11 @@
 ---
 import { Icon } from 'astro-icon/components';
-const { icon, label } = Astro.props;
+const { icon, label, path } = Astro.props;
 ---
 
 <button class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 xl:w-32 xl:h-32 
         rounded-full bg-rose-500 hover:bg-rose-500/40 hover:border-4 hover:border-rose-500 
         backdrop-blur-md shadow-lg flex justify-center items-center 
         hover:animate-spin transition-all duration-300"
-><Icon name={icon} class=" text-white size-8 hover:text-rose-500 hover:size-10 "/>
+><a href={path}><Icon name={icon} class=" text-white size-8 hover:text-rose-500 hover:size-10 "/></a>
 </button>
