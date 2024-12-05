@@ -1,13 +1,21 @@
 ---
 import Menu from "./Menu.astro";
-
-
 ---
 
-<div id="container" class="p-10 bg-rose-500 text-white flex flex-col items-center space-y-4 md:space-y-6  shadow-lg">
-	<h1 class="text-4xl font-bold">MAFE PARDO</h1>
-	<h3 class="text-2xl">Desarrolladora de Software</h3>
-	<h4 class="text-xl italic">Backend & Frontend</h4>
-	<Menu></Menu>
+<div id="container" class="hover:animate-pulse bg-gradient-to-b from-red-100 to-red-200 welcome w-100 h-100 p-10  flex flex-col items-center text-rose-600 shadow-xl">
+	<h1 class="text-8xl  ">MAFE PARDO</h1>
+	<h3 class="text-4xl text-white">Desarrolladora de Software 👩🏼‍💻</h3>
+	<h4 class="text-2xl italic text-white">Backend & Frontend</h4>
 </div>
 
+<style>
+	.welcome h1{
+		font-family: var(--font-primary);
+	}
+	.welcome h3{
+		font-family: var(--font-secondary);
+	}
+	.welcome h4{
+		font-family: var(--font-secondary-italic);
+	}
+</style>

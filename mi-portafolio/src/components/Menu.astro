@@ -7,7 +7,7 @@ const sections = [
   { id: 'contact', icon: 'mail', label: 'Contacto' }
 ];
 ---
-<div class="flex p-10  place-content-around sm:gap-5">
+<div class="flex flex-col md:flex-row p-10 place-content-around gap-5 justify-center items-center ">
   {sections.map(section => (
     <Buttom label={section.label} key={section.id} icon={section.icon}>
     </Buttom>
