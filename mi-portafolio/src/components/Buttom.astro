@@ -1,0 +1,10 @@
+---
+import { Icon } from 'astro-icon/components';
+const { icon, label } = Astro.props;
+---
+
+<button
+  class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 xl:w-32 xl:h-32 hover:border-4 hover:border-white
+        rounded-full bg-white backdrop-blur-md hover:bg-white/20 transition-all duration-300 flex justify-center items-center"
+><Icon name={icon} class=" text-rose-500 size-8 hover:text-white hover:size-10 "/>
+</button>

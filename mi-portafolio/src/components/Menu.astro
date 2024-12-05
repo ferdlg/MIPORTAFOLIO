@@ -1,0 +1,15 @@
+---
+import Buttom from './Buttom.astro';
+const sections = [
+  { id: 'projects', icon: 'code', label: 'Proyectos' },
+  { id: 'skills', icon: 'sparkle', label: 'Skills' },
+  { id: 'about', icon: 'coffee', label: 'Sobre mí' },
+  { id: 'contact', icon: 'mail', label: 'Contacto' }
+];
+---
+<div class="flex p-10  place-content-around sm:gap-5">
+  {sections.map(section => (
+    <Buttom label={section.label} key={section.id} icon={section.icon}>
+    </Buttom>
+  ))}
+</div>
