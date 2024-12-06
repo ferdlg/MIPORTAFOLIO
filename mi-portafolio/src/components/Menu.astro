@@ -7,10 +7,12 @@ const sections = [
   { id: 'about', icon: 'coffee', label: 'Sobre mí', path:'/about' },
   { id: 'contact', icon: 'mail', label: 'Contacto', path:'/contact' }
 ];
+
+const {layout}= Astro.props;
 ---
-<div class="bg-rose-100 flex flex-col md:flex-row p-10 place-content-around gap-5 justify-center items-center ">
+<nav class={`bg-rose-100 flex ${layout} py-5 md:p-10 place-content-around gap-2 justify-center items-center`}>
   {sections.map(section => (
     <Buttom label={section.label} key={section.id} icon={section.icon} path={section.path}>
     </Buttom>
   ))}
-</div>
+</nav>

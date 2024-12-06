@@ -1,9 +1,19 @@
 ---
-import Layout from '../layouts/Layout.astro';
-
-
+import LayoutMenu from '../layouts/LayoutMenu.astro';
+import Card from '../components/Card.astro';
+const projects = [
+    {id:'', link:'', name:'proyecto1', description:'', img:'', git:''},
+    {id:'', link:'', name:'', description:'', img:'', git:''},
+    {id:'', link:'', name:'', description:'', img:'', git:''},
+]
 ---
 
-<Layout pageTitle="Mi trabajo">
-    <h1>Proyectos</h1>
-</Layout>
+<LayoutMenu pageTitle="Mi trabajo">
+    <h1>projects</h1>
+    <div class="w-screen h-100 bg-white flex">
+        {projects.map(project =>(
+            <Card name={project.name}>
+            </Card>
+            ))}
+    </div>
+</LayoutMenu>
