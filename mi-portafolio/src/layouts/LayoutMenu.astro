@@ -15,11 +15,11 @@ const {pageTitle} = Astro.props;
 	</head>
 	<body class="flex flex-col min-h-screen">
 			<main class="flex-grow bg-rose-100 h-full">
-				<div class="flex overflow-y-auto h-full">
+				<div class="flex  h-full">
 					<div class="bg-rose-100 flex flex-col items-center justify-center h-full">
 						<Menu layout="flex-col"></Menu>
 					</div>
-					<div class="bg-white h-full">
+					<div class="bg-white h-full overflow-y-auto">
 						<slot></slot>
 					</div>
 				</div>
