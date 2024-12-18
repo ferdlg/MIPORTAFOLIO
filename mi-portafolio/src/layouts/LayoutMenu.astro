@@ -8,21 +8,24 @@ const {pageTitle} = Astro.props;
 <html lang="es">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
 	</head>
-	<body class="h-100 flex flex-col justify-end">
-		<main class="flex bg-rose-100 p-5">	
-            <div class="">
-                <Menu layout="flex-col"></Menu>
-            </div>
-            <slot></slot>
-		</main>
-		<footer>
-			<Footer></Footer>
-		</footer>
-	</body>
+	<body class="flex flex-col min-h-screen">
+			<main class="flex-grow bg-rose-100 h-full">
+				<div class="flex overflow-y-auto h-full">
+					<div class="bg-rose-100 flex flex-col items-center justify-center h-full">
+						<Menu layout="flex-col"></Menu>
+					</div>
+					<div class="bg-white h-full">
+						<slot></slot>
+					</div>
+				</div>
+			</main>
+			<footer class="w-full bg-rose-500 text-white">
+				<Footer></Footer>
+			</footer>
+	</body>	  
 </html>
-

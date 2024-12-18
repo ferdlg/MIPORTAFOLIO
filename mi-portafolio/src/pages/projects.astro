@@ -1,19 +1,64 @@
 ---
 import LayoutMenu from '../layouts/LayoutMenu.astro';
-import Card from '../components/Card.astro';
+import ProjectCard from '../components/Card';
+
 const projects = [
-    {id:'', link:'', name:'proyecto1', description:'', img:'', git:''},
-    {id:'', link:'', name:'', description:'', img:'', git:''},
-    {id:'', link:'', name:'', description:'', img:'', git:''},
-]
+    {
+        id: '1',
+        link: 'https://cosmmoviaje.com',
+        name: 'Cosmmo Viaje',
+        description: 'Aplicación web educativa que permite explorar destinos turísticos y planificar viajes, desarrollada como parte de un programa de formación. Utiliza React con Vite para garantizar un rendimiento óptimo.',
+        img: 'https://i.pinimg.com/736x/b0/c5/3d/b0c53d21a2fb9974904abb692b3ce79f.jpg',
+        git: 'https://github.com/usuario/cosmmo-viaje',
+    },
+    {
+        id: '2',
+        link: 'https://bicitravesia.com',
+        name: 'Bici Travesía',
+        description: 'Plataforma que facilita la organización de rutas ciclistas y eventos comunitarios. Ofrece herramientas para registrar recorridos y conectarse con otros usuarios. Desarrollada con React y Vite.',
+        img: 'https://i.pinimg.com/736x/b0/c5/3d/b0c53d21a2fb9974904abb692b3ce79f.jpg',
+        git: 'https://github.com/usuario/bicitravesia',
+    },
+    {
+        id: '3',
+        link: 'https://petsadoptions.com',
+        name: 'Pets Adoptions',
+        description: 'Marketplace enfocado en la adopción de mascotas, conectando refugios y adoptantes. Implementa funcionalidades clave como filtros de búsqueda y mensajería, desarrollado con React y Vite.',
+        img: 'https://i.pinimg.com/736x/b0/c5/3d/b0c53d21a2fb9974904abb692b3ce79f.jpg',
+        git: 'https://github.com/usuario/pets-adoptions',
+    },
+    {
+        id: '4',
+        link: 'https://petsadoptions.com',
+        name: 'Botanic Store',
+        description: 'Marketplace enfocado en la adopción de mascotas, conectando refugios y adoptantes. Implementa funcionalidades clave como filtros de búsqueda y mensajería, desarrollado con React y Vite.',
+        img: 'https://i.pinimg.com/736x/b0/c5/3d/b0c53d21a2fb9974904abb692b3ce79f.jpg',
+        git: 'https://github.com/usuario/pets-adoptions',
+    },
+
+];
+
 ---
 
 <LayoutMenu pageTitle="Mi trabajo">
-    <h1>projects</h1>
-    <div class="w-screen h-100 bg-white flex">
-        {projects.map(project =>(
-            <Card name={project.name}>
-            </Card>
+    <div class="bg-white min-h-full">
+        <div class="flex justify-center p-5 border-b-4 text-rose-500">
+            <h1 class="hover:animate-pulse text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center">
+                ¡Hecha un vistazo a mi trabajo!
+            </h1>
+        </div>
+        <div class="grid gap-4 p-16 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            {projects.map(project => (
+                <ProjectCard
+                name={project.name}
+                description={project.description}
+                link={project.link}
+                repo={project.git}
+                img={project.img}
+                ></ProjectCard>
             ))}
+            
+        </div>
     </div>
 </LayoutMenu>
+

@@ -8,10 +8,21 @@
 body{
     width: 100%;
     height: 100vh;
+    scrollbar-width: thin;
+    scrollbar-color: white white; 
 }
+
+body::-webkit-scrollbar {
+    width: 0px; 
+    background: transparent; 
+}
+
+
+
 main{
     height: 100%;
     display:flex;
+    overflow-y: auto;
 }
 :root {
     --font-primary: 'Open Sans', sans-serif;
