@@ -1,0 +1,32 @@
+---
+import { navigation } from "../../navigation/index.js";
+import "../styles/header.css";
+---
+
+<header class="header" data-header>
+  <div class="shell header__bar">
+    <a class="header__brand" href="/#inicio">
+      <span class="header__mark" aria-hidden="true">MP</span>
+      <span>Fernanda Pardo</span>
+    </a>
+    <button
+      class="header__toggle"
+      type="button"
+      data-nav-toggle
+      aria-expanded="false"
+      aria-controls="nav-principal"
+    >
+      <span class="header__bars" aria-hidden="true"></span>
+      Menú
+    </button>
+    <nav class="header__nav" id="nav-principal" data-nav aria-label="Secciones">
+      {
+        navigation.map((item) => (
+          <a class="header__link" href={item.href}>
+            {item.label}
+          </a>
+        ))
+      }
+    </nav>
+  </div>
+</header>

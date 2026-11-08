@@ -1,0 +1,74 @@
+---
+import "../styles/floats.css";
+
+const words = [
+  "<div>", "</div>", "<span>", "<p>", "<h1>", "<a>",
+  "<ul>", "<li>", "<img>", "<nav>", "<em>", "<br>",
+  "<code>", "<main>", "<hr>", "<ol>", "<pre>", "<b>",
+];
+
+const tones = ["ink", "rose", "deep"];
+
+const spots = {
+  name: [
+    ["8%", "8%"],
+    ["54%", "22%"],
+    ["20%", "40%"],
+    ["66%", "56%"],
+    ["34%", "74%"],
+    ["12%", "90%"],
+  ],
+  lead: [
+    ["16%", "28%"],
+    ["58%", "70%"],
+  ],
+  cards: [
+    ["10%", "14%"],
+    ["42%", "40%"],
+    ["18%", "66%"],
+    ["48%", "86%"],
+  ],
+};
+
+const bands = ["name", "lead", "cards"];
+
+function scatter(band, side) {
+  return spots[band].map(([x, y], index) => {
+    const step = index + (side === "right" ? 5 : 0) + bands.indexOf(band) * 3;
+    const peer = spots[band][(index + 2) % spots[band].length];
+    return {
+      text: words[step % words.length],
+      tone: tones[step % tones.length],
+      reverse: step % 2 === 0,
+      x: side === "right" ? peer[0] : x,
+      y,
+      time: `${3.8 + (step % 4) * 0.5}s`,
+      delay: `-${(step % 6) * 0.35}s`,
+    };
+  });
+}
+---
+
+<div class="floats" aria-hidden="true">
+  {
+    bands.map((band) => (
+      <div class:list={["floats__band", `floats__band--${band}`]}>
+        {["left", "right"].map((side) => (
+          <div class="floats__side">
+            {scatter(band, side).map((tag) => (
+              <span
+                class:list={[
+                  "floats__tag",
+                  `floats__tag--${tag.tone}`,
+                  tag.reverse && "floats__tag--reverse",
+                ]}
+                style={`--x:${tag.x};--y:${tag.y};--time:${tag.time};--delay:${tag.delay}`}
+                set:text={tag.text}
+              />
+            ))}
+          </div>
+        ))}
+      </div>
+    ))
+  }
+</div>

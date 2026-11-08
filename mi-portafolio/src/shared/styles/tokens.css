@@ -1,0 +1,28 @@
+:root {
+  --field: #e7a8b8;
+  --canvas: #fff8f6;
+  --surface: #ffffff;
+  --blush: #f8e6eb;
+  --ink: #2c1a22;
+  --ink-soft: #6d4552;
+  --line: #f0d4dc;
+  --rose: #c45370;
+  --rose-deep: #8f2e49;
+  --frame: 14px;
+  --header: 4.6rem;
+  --max: 72rem;
+  --radius: 28px;
+  --depth: 0 18px 34px rgba(143, 46, 73, 0.14);
+  --layer: 14px 16px 0 #f3c6d2;
+  --font-body: "Outfit", "Segoe UI", sans-serif;
+  --font-display: "Syne", "Outfit", sans-serif;
+  color-scheme: light;
+}
+
+@media (max-width: 720px) {
+  :root {
+    --frame: 8px;
+    --header: 4.2rem;
+    --radius: 20px;
+  }
+}

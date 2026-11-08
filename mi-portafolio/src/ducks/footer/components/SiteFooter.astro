@@ -1,0 +1,13 @@
+---
+import { profile } from "../../profile/index.js";
+import "../styles/footer.css";
+
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="shell footer__bar">
+    <p class="footer__copy">© {year} {profile.name}</p>
+    <p class="footer__note">Diseñado y desarrollado como portafolio frontend con ❤️, Astro y Tailwind CSS.</p>
+  </div>
+</footer>

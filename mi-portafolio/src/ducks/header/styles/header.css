@@ -1,0 +1,123 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  min-height: var(--header);
+  background: var(--canvas);
+}
+
+.header__bar {
+  min-height: var(--header);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.header__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-weight: 650;
+}
+
+.header__mark {
+  display: grid;
+  place-items: center;
+  width: 2.35rem;
+  height: 2.35rem;
+  border-radius: 50%;
+  background: var(--rose-deep);
+  color: #fff;
+  font-size: 0.78rem;
+  transition: transform 0.35s ease;
+}
+
+.header__brand:hover .header__mark {
+  transform: scale(1.06);
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+  padding: 0.28rem;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+
+.header__link {
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  text-decoration: none;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  font-weight: 600;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.header__link:hover,
+.header__link.is-current {
+  background: var(--rose-deep);
+  color: #fff;
+}
+
+.header__toggle {
+  display: none;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 2.6rem;
+  padding: 0.35rem 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.header__bars {
+  width: 0.95rem;
+  height: 0.65rem;
+  background:
+    linear-gradient(var(--ink), var(--ink)) 0 0 / 100% 1.5px,
+    linear-gradient(var(--ink), var(--ink)) 0 50% / 100% 1.5px,
+    linear-gradient(var(--ink), var(--ink)) 0 100% / 100% 1.5px;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 860px) {
+  .header__toggle {
+    display: inline-flex;
+  }
+
+  .header__nav {
+    position: absolute;
+    top: calc(100% + 0.4rem);
+    right: 0.8rem;
+    left: 0.8rem;
+    display: grid;
+    padding: 0.45rem;
+    border-radius: 18px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-6px);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+  }
+
+  .header__nav.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header__mark,
+  .header__link,
+  .header__nav {
+    transition: none;
+  }
+}

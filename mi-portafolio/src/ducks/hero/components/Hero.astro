@@ -1,0 +1,51 @@
+---
+import { profile } from "../../profile/index.js";
+import HeroFloats from "./HeroFloats.astro";
+import "../styles/hero.css";
+---
+
+<section class="hero" id="inicio">
+  <HeroFloats />
+  <div class="shell hero__layout">
+    <div class="hero__banner">
+      <div class="hero__copy">
+      <p class="hero__kicker">{profile.availability}</p>
+      <h1 class="hero__title">
+        <span>Fernanda</span>
+        <span>Pardo</span>
+      </h1>
+      <p class="hero__role">{profile.role}</p>
+      <p class="hero__lead">{profile.lead}</p>
+      <div class="hero__actions">
+        <a class="button button--primary" href="/#proyectos">
+          Ver proyectos
+          <span class="button__arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+      </div>
+    </div>
+    <div class="hero__visual">
+      <div class="portrait" aria-hidden="true">
+        <div class="portrait__disc"></div>
+        <div class="portrait__card">
+          <p>Frontend</p>
+          <strong>Interfaces con ritmo y claridad.</strong>
+          <div class="portrait__lines"><span></span><span></span><span></span></div>
+        </div>
+      </div>
+      <aside class="sheet" aria-label="Resumen profesional">
+        <p class="sheet__label">Ficha</p>
+        <ul class="sheet__facts">
+          {
+            profile.facts.map((fact) => (
+              <li>
+                <span>{fact.label}</span>
+                <strong>{fact.value}</strong>
+              </li>
+            ))
+          }
+        </ul>
+      </aside>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,18 @@
+---
+import SectionHeading from "../../../shared/components/SectionHeading.astro";
+import { technologies } from "../index.js";
+import "../styles/skills.css";
+---
+
+<section class="section" id="habilidades" aria-labelledby="habilidades-titulo">
+  <div class="shell">
+    <SectionHeading id="habilidades-titulo" eyebrow="Stack" title="Tecnologías" />
+    <ul class="techs">
+      {
+        technologies.map((tech) => (
+          <li class={`tech tech--${tech.tone}`}>{tech.name}</li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

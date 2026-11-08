@@ -1,0 +1,32 @@
+---
+import SectionHeading from "../../../shared/components/SectionHeading.astro";
+import { profile } from "../../profile/index.js";
+import { principles } from "../index.js";
+import "../styles/about.css";
+---
+
+<section class="section" id="sobre-mi" aria-labelledby="sobre-titulo">
+  <div class="shell">
+    <SectionHeading
+      id="sobre-titulo"
+      eyebrow="Sobre mí"
+      title="Frontend con criterio visual."
+      text={profile.about}
+    />
+    <div class="about__layout" data-reveal>
+      <p class="about__statement">
+        Una buena interfaz no grita. Guía, responde y se queda quieta cuando ya hizo su trabajo.
+      </p>
+      <ul class="principles">
+        {
+          principles.map((item) => (
+            <li class="principle">
+              <h3 class="principle__title">{item.title}</h3>
+              <p class="principle__text">{item.text}</p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</section>

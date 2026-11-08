@@ -1,0 +1,42 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SiteHeader from "../ducks/header/components/SiteHeader.astro";
+import SiteFooter from "../ducks/footer/components/SiteFooter.astro";
+---
+
+<BaseLayout title="Página no encontrada · Fernanda Pardo" description="Esta ruta no forma parte del portafolio.">
+  <SiteHeader />
+  <main class="missing shell" id="contenido">
+    <p class="missing__code">404</p>
+    <h1 class="missing__title">Esta página no está en el portafolio.</h1>
+    <a class="button button--primary" href="/">Volver al inicio</a>
+  </main>
+  <SiteFooter />
+</BaseLayout>
+
+<style>
+  .missing {
+    display: grid;
+    gap: 0.8rem;
+    align-content: center;
+    min-height: calc(100vh - 9rem);
+    padding: 3rem 0;
+  }
+
+  .missing__code {
+    margin: 0;
+    color: var(--rose-deep);
+    font-weight: 700;
+    letter-spacing: 0.14em;
+  }
+
+  .missing__title {
+    max-width: 14ch;
+    margin: 0 0 0.6rem;
+    font-family: var(--font-display);
+    font-size: clamp(2.4rem, 6vw, 4.2rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 0.98;
+  }
+</style>

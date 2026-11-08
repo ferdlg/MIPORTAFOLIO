@@ -1,0 +1,8 @@
+# El sitio publicable es el portafolio Astro.
+[build]
+  base = "mi-portafolio"
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
