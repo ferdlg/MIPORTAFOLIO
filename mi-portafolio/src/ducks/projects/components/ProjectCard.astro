@@ -1,0 +1,39 @@
+---
+const { project, index } = Astro.props;
+const number = String(index + 1).padStart(2, "0");
+---
+
+<article class="project" data-reveal style={`--delay:${index * 70}ms`}>
+  <a
+    class={`scene scene--${project.scene} project__media`}
+    href={project.url}
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label={`Abrir ${project.name} en una pestaña nueva`}
+  >
+    <img
+      class="scene__image"
+      src={project.image}
+      alt=""
+      loading="lazy"
+      decoding="async"
+      width="272"
+      height="272"
+    />
+  </a>
+  <div class="project__body">
+    <p class="project__index">{number}</p>
+    <h3 class="project__title">{project.name}</h3>
+    <p class="project__text">{project.description}</p>
+    <ul class="project__tags">
+      {project.tags.map((tag) => <li>{tag}</li>)}
+    </ul>
+    <div class="project__links">
+      <a class="project__link" href={project.url} target="_blank" rel="noopener noreferrer">
+        Ver sitio
+        <span class="project__arrow" aria-hidden="true">→</span>
+        <span class="visually-hidden"> (se abre en una pestaña nueva)</span>
+      </a>
+    </div>
+  </div>
+</article>

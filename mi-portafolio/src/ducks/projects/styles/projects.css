@@ -1,0 +1,139 @@
+.projects {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.project {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-content: start;
+  gap: 0.9rem;
+  padding: 0.7rem 0.7rem 1.1rem;
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background: var(--surface);
+  box-shadow: var(--depth);
+  transition: transform 0.4s ease;
+}
+
+.project:hover {
+  transform: translateY(-8px);
+}
+
+.project__body {
+  padding: 0.15rem 0.45rem 0.1rem;
+}
+
+.project__index {
+  margin: 0;
+  color: var(--rose-deep);
+  font-size: 0.78rem;
+  font-weight: 650;
+  letter-spacing: 0.14em;
+}
+
+.project__title {
+  margin: 0.25rem 0 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.7rem, 3vw, 2.3rem);
+  font-weight: 650;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+}
+
+.project__text {
+  margin: 0.65rem 0 0;
+  color: var(--ink-soft);
+}
+
+.project__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.9rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.project__tags li {
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  background: var(--blush);
+  color: var(--rose-deep);
+  font-size: 0.78rem;
+  font-weight: 650;
+}
+
+.project__links {
+  margin-top: 1rem;
+}
+
+.project__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.7rem 0.45rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 650;
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.project__arrow {
+  transition: transform 0.3s ease;
+}
+
+.project__link:hover {
+  background: var(--rose-deep);
+  border-color: var(--rose-deep);
+  color: #fff;
+}
+
+.project__link:hover .project__arrow {
+  transform: translateX(4px);
+}
+
+.scene {
+  display: grid;
+  place-items: center;
+  min-height: 13.5rem;
+  border-radius: 22px;
+  background: var(--blush);
+  text-decoration: none;
+  color: inherit;
+}
+
+.scene__image {
+  width: 8.5rem;
+  height: 8.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
+  background: #fff;
+  box-shadow: 12px 14px 0 #f3c6d2, var(--depth);
+  transition: transform 0.45s ease;
+}
+
+.project:hover .scene__image {
+  transform: scale(1.08);
+}
+
+@media (max-width: 800px) {
+  .projects {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project,
+  .project:hover,
+  .scene__image,
+  .project:hover .scene__image,
+  .project__arrow,
+  .project__link:hover .project__arrow {
+    transition: none;
+    transform: none;
+  }
+}
