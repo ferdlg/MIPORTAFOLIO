@@ -1,0 +1,20 @@
+---
+import SectionHeading from "../../../shared/components/SectionHeading.astro";
+import ProjectCard from "./ProjectCard.astro";
+import { projects } from "../index.js";
+import "../styles/projects.css";
+---
+
+<section class="section" id="proyectos" aria-labelledby="proyectos-titulo">
+  <div class="shell">
+    <SectionHeading
+      id="proyectos-titulo"
+      eyebrow="Trabajo seleccionado"
+      title="Interfaces con un trabajo concreto detrás."
+      text="Hoy trabajo con empresas; esos proyectos no los publico por términos y condiciones. Lo que ves aquí es trabajo académico, con prioridad en ordenar la información y dejar un recorrido fácil de usar."
+    />
+    <div class="projects">
+      {projects.map((project, index) => <ProjectCard project={project} index={index} />)}
+    </div>
+  </div>
+</section>
